@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bangboo Store RIDU-O</title>
+  <link rel="stylesheet" href="./src/output.css">
+  <link rel="icon" type="image/png" href="./img/Logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Animasi Custom */
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+    }
+    .animate-wiggle { animation: wiggle 1s infinite; }
+
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin-slow { animation: spin-slow 10s linear infinite; }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes bounce-small {
+    0%, 100% {
+      transform: translateY(-5px); /* lebih pendek lompatannya */
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateY(0); /* kembali ke posisi normal */
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+
+  .animate-bounce-small {
+    animation: bounce-small 1s infinite;
+  }
+  </style>
+</head>
+<body class="font-sans bg-cyan-100">
+
+  <!-- NAVBAR -->
+<header class="fixed top-0 left-0 w-full bg-cyan-700 text-white shadow-md z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-4 sm:px-6">
+    <div class="flex items-center space-x-3">
+      <img src="img/Logo.png" alt="Logo" class="w-auto h-8 sm:h-10">
+      <h1 class="text-xl sm:text-2xl font-bold">RIDU-O</h1>
+    </div>
+
+    <!-- Mobile Menu -->
+    <button id="menu-btn" class="md:hidden flex flex-col space-y-1">
+      <span class="w-6 h-0.5 bg-white"></span>
+      <span class="w-6 h-0.5 bg-white"></span>
+      <span class="w-6 h-0.5 bg-white"></span>
+    </button>
+
+    <nav id="menu" class="hidden md:flex space-x-4 text-sm md:text-base mt-2 md:mt-0 flex-col md:flex-row absolute md:static top-16 left-0 w-full md:w-auto bg-cyan-700 md:bg-transparent text-center md:text-left py-4 md:py-0">
+      <a href="#tentang" class="block py-2 hover:text-cyan-300">Tentang</a>
+      <a href="#menu" class="block py-2 hover:text-cyan-300">Menu</a>
+      <a href="#galeri" class="block py-2 hover:text-cyan-300">Galeri</a>
+      <a href="#kontak" class="block py-2 hover:text-cyan-300">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+  <!-- HERO -->
+<section class="pt-20 relative h-[60vh] sm:h-[70vh] flex items-center justify-center bg-cover bg-center text-white fade-in"
+  style="background-image: url('./img/Banner Juga2.jpg')">
+  <div class="bg-black bg-opacity-70 p-6 sm:p-12 rounded-lg text-center max-w-md sm:max-w-lg mx-auto">
+    <h2 class="text-xl sm:text-3xl font-bold mb-4 animate-wiggle">Selamat Datang di Toko Kami</h2>
+    <p class="text-sm sm:text-lg animate-pulse">Toko Robot Bangboo Paling Lengkap di Kota ini!</p>
+  </div>
+</section>
+
+  <!-- TENTANG -->
+  <section id="tentang" class="py-16 max-w-7xl mx-auto px-6 fade-in">
+    <h2 class="text-3xl font-bold text-center text-cyan-700 mb-8 animate-bounce">Tentang Kami</h2>
+    <p class="text-gray-700 text-center max-w-2xl mx-auto">
+      Toko kami menjual robot cerdas bernama Bangboo yang dapat menemani keseharianmu, mulai dari rumah hingga pekerjaan.
+    </p>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" class="py-12 sm:py-16 bg-cyan-50 fade-in">
+    <div class="max-w-7xl mx-auto px-6 sm:px-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center text-cyan-700 mb-8 animate-bounce">Bangboo Andalan</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col items-center transform transition hover:scale-105 duration-300">
+          <img src="./img/officer cui.webp" alt="Officer Cui" class="w-auto h-64 object-cover animate-bounce">
+          <div class="p-4 text-center">
+            <h3 class="text-xl font-bold text-cyan-600 animate-pulse">Officer Cui</h3>
+            <p class="text-gray-600 mt-2">Bangboo yang menjaga keamanan rumah & kota.</p>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col items-center transform transition hover:scale-105 duration-300">
+          <img src="./img/butler.webp" alt="Buttler" class="w-auto h-64 object-cover animate-bounce">
+          <div class="p-4 text-center">
+            <h3 class="text-xl font-bold text-cyan-600 animate-pulse">Buttler</h3>
+            <p class="text-gray-600 mt-2">Bangboo serba guna untuk pekerjaan rumah.</p>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col items-center transform transition hover:scale-105 duration-300">
+          <img src="./img/safety.webp" alt="Safety" class="w-auto h-64 object-cover animate-bounce">
+          <div class="p-4 text-center">
+            <h3 class="text-xl font-bold text-cyan-600 animate-pulse">Safety</h3>
+            <p class="text-gray-600 mt-2">Bangboo untuk konstruksi dan infrastruktur.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERI -->
+  <section id="galeri" class="py-16 max-w-7xl mx-auto px-6 fade-in">
+    <h2 class="text-3xl font-bold text-center text-cyan-700 mb-8 animate-bounce ">Galeri</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="rounded-lg shadow-md bg-gray-100 w-full h-auto overflow-hidden flex flex-col items-center transform transition hover:scale-105 duration-300">
+        <img src="./img/penguinboo.webp" alt="Galeri 1" class="object-cover animate-bounce-small">
+      </div>
+      <div  class="rounded-lg shadow-md bg-blue-100 w-full h-auto overflow-hidden flex flex-col items-center transform transition hover:scale-105 duration-300">
+        <img src="./img/sharkboo.webp" alt="Galeri 2" class="object-cover animate-bounce-small">
+      </div>
+      <div class="rounded-lg shadow-md bg-lime-100 w-full h-auto overflow-hidden flex flex-col items-center transform transition hover:scale-105 duration-300">
+      <img src="./img/exploreboo.webp" alt="Galeri 3" class="object-cover animate-bounce-small">
+      </div>
+      <div class="rounded-lg shadow-md bg-yellow-100 w-full h-auto overflow-hidden flex flex-col items-center transform transition hover:scale-105 duration-300">
+      <img src="./img/electroboo.webp" alt="Galeri 4" class="object-cover animate-bounce-small">
+    </div>
+  </div>
+  </section>
+
+  <!-- KONTAK -->
+  <section id="kontak" class="py-16 bg-cyan-50 fade-in">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-cyan-700 mb-8 animate-bounce">Kontak & Lokasi</h2>
+      <p class="mb-4 text-gray-700 animate-pulse">Alamat: Gang Sixth Street No.11, Kota New Eridu, Provinsi Hoyoverse</p>
+      <a href="https://youtu.be/xvFZjo5PgG0?si=1KwcS4My7hI2MFIJ" target="_blank"
+        class="bg-cyan-500 text-white px-6 py-3 rounded-full shadow hover:bg-cyan-800 transition animate-bounce">
+        Hubungi via Interknot
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-cyan-700 text-white py-6 fade-in">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+      <img src="./img/Logo.png" alt="Logo Bangboo" class="w-auto h-8 animate-pulse">
+      <p class="text-center sm:text-left animate-pulse">&copy; 2025 Bangboo Store RIDU-O. Semua Hak Bangboo Dilindungi.</p>
+    </div>
+  </footer>
+
+  <!-- Script Animasi Scroll -->
+  <script>
+    const elements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+
+    const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("menu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+  </script>
+</body>
+</html>
